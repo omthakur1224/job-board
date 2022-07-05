@@ -1,0 +1,9 @@
+.headings{
+    margin-top: 2%;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.link{
+    text-decoration: none;
+}

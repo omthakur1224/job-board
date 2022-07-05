@@ -16,7 +16,7 @@
         "HR1",
         "HR2"
       ],
-      "Experience(in yrs)": "0-2",
+      "Experience": "0-2 years",
       "Minimum_Salary": "5 LPA",
       "Maximum_Salary": "12 LPA",
       "id": 1
@@ -36,7 +36,7 @@
         "HR1",
         "HR2"
       ],
-      "Experience(in yrs)": "2-5",
+      "Experience": "2-5 years",
       "Minimum_Salary": "8 LPA",
       "Maximum_Salary": "16 LPA",
       "id": 2
@@ -59,7 +59,7 @@
         "CSS",
         "UI"
       ],
-      "Experience(in yrs)": "1-2",
+      "Experience": "1-2 years",
       "Minimum_Salary": "15 LPA",
       "Maximum_Salary": "30 LPA",
       "id": 3
@@ -79,7 +79,7 @@
         "DSA",
         "UI"
       ],
-      "Experience(in yrs)": "fresher",
+      "Experience": "fre yearssher",
       "Selection_Process": [
         "HackerRank Contest",
         "Coding Test",
@@ -104,7 +104,7 @@
         "DSA",
         "UI"
       ],
-      "Experience(in yrs)": "fresher",
+      "Experience": "fre yearssher",
       "Selection_Process": [
         "HackerRank Contest",
         "Coding Test",

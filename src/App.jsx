@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import logo from './logo.svg'
+
 import './App.css'
 import SearchAppBar from './component/Nav'
 import Cards from './component/Cards'
-
+import {Routes, Route} from 'react-router-dom';
+import Description from './component/Description';
 function App() {
 
   return (
     <div className="App">
       <SearchAppBar/>
-      <Cards/>
+      <Routes>
+          < Route path="/" element={<Cards/>}/>
+          < Route path="/job_desc/:id" element={<Description/>}/>
+      </Routes>
+      {/* <Cards/> */}
     </div>
   )
 }
