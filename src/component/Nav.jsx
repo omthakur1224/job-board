@@ -26,7 +26,10 @@ const Search = styled('div')(({ theme }) => ({
     width: 'auto',
   },
 }));
-
+const handleClick=(search)=>{
+  let result=searchData(search)
+  console.log("res",result)
+}
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
@@ -55,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-  const [search,setSerch]=useState("");
+  const [search,setSearch]=useState("");
   
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -85,12 +88,12 @@ export default function SearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onChange={(e)=>setSerch(e.target.value)}
+              onChange={(e)=>setSearch(e.target.value)}
               />
           </Search>
           <Button variant="contained" 
           // color='success' 
-          onClick={()=>searchData(search)}
+          onClick={()=>handleClick(search)}
            >
             Search
           </Button>
