@@ -8,7 +8,10 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import {debouncing} from './Debounce.js'
+import {useState} from 'react'
+import Button from '@mui/material/Button';
+
+import { searchData} from './Debounce.js'
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -52,6 +55,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const [search,setSerch]=useState("");
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -80,9 +85,15 @@ export default function SearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onKeyUp={()=>debouncing()}
-            />
+              onChange={(e)=>setSerch(e.target.value)}
+              />
           </Search>
+          <Button variant="contained" 
+          // color='success' 
+          onClick={()=>searchData(search)}
+           >
+            Search
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
