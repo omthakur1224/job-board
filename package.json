@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start":"npx json-server db.json --port 8080 --watch"
+    "start":"npx json-server db.json --port 9999 --watch"
   },
   "dependencies": {
     "@emotion/react": "latest",
