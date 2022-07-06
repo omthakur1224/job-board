@@ -1,17 +1,15 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import {useState} from 'react'
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 
-import { searchData} from './Debounce.js'
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -26,10 +24,7 @@ const Search = styled('div')(({ theme }) => ({
     width: 'auto',
   },
 }));
-const handleClick=(search)=>{
-  let result=searchData(search)
-  console.log("res",result)
-}
+
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
@@ -58,8 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-  const [search,setSearch]=useState("");
-  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -79,7 +72,7 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-           Welcome to Job Board
+            Job Board
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -88,15 +81,9 @@ export default function SearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              onChange={(e)=>setSearch(e.target.value)}
-              />
+            />
           </Search>
-          <Button variant="contained" 
-          // color='success' 
-          onClick={()=>handleClick(search)}
-           >
-            Search
-          </Button>
+          <Button variant='contained'>Search</Button>
         </Toolbar>
       </AppBar>
     </Box>
