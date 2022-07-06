@@ -13,7 +13,7 @@ function Description() {
 
     useEffect(() => {
         // let id =req.params;
-        axios.get(`http://localhost:8080/jobs/${id}`)
+        axios.get(`http://localhost:4444/jobs/${id}`)
         .then((res)=>{
             // var searchResult = res.data.filter(word => word.job_title.toLowerCase().indexOf(search) > -1);
             // console.log(searchResult);

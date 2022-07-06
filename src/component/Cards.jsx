@@ -11,7 +11,7 @@ function Cards() {
     const [jobs,setJobs]=useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/jobs")
+        axios.get("http://localhost:4444/jobs")
         // .then((res)=>{
         //     // var searchResult = res.data.filter(word => word.job_title.toLowerCase().indexOf(search) > -1);
         //     res.json()
