@@ -4,15 +4,21 @@ import {useParams,useNavigate} from 'react-router-dom';
 import './Cards.css'
 import { Button } from '@mui/material';
 import Cards from './Cards';
+import {arr} from './data.js'
 function Description() {
-
-    const navigate=useNavigate()
-    const [jobs,setJobs]=useState([]);
-
+    
     const {id}=useParams();
+
+    const navigate=useNavigate();
+    
+    let job=arr.filter(e=>e.id==id)
+
+    const [jobs,setJobs]=useState(job[0]||[]);
+
 
     useEffect(() => {
         // let id =req.params;
+        jobs ||
         axios.get(`http://localhost:4444/jobs/${id}`)
         .then((res)=>{
             // var searchResult = res.data.filter(word => word.job_title.toLowerCase().indexOf(search) > -1);

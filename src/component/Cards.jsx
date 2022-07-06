@@ -5,12 +5,13 @@ import {Link} from 'react-router-dom'
 // import { getData } from './Debounce';
 import './Cards.css'
 import Description from './Description';
-
+import {arr} from './data.js'
 function Cards() {
 
-    const [jobs,setJobs]=useState([]);
+    const [jobs,setJobs]=useState(arr);
 
     useEffect(() => {
+        jobs ||
         axios.get("http://localhost:4444/jobs")
         // .then((res)=>{
         //     // var searchResult = res.data.filter(word => word.job_title.toLowerCase().indexOf(search) > -1);
