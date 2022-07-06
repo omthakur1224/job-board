@@ -9,6 +9,9 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
+import { arr } from './data';
+import { useNavigate } from 'react-router-dom';
+import Searched from './Searched.jsx'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,7 +55,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
+
 export default function SearchAppBar() {
+
+  const [search,setSearch]=React.useState('');
+  const [data,setData]=React.useState();
+  const navigate=useNavigate()
+  
+  const handleChange=(e)=>{
+        
+        setSearch(e.target.value)
+  }
+  const [show,setShow]=React.useState(false);
+
+  const handleClick=(search)=>{
+
+    setShow(!show)
+    // if(search==="" || search===undefined) {return }
+    var searchResult = 
+    // arr.filter((job)=>{return job.job_title==search } )
+    arr.filter(word =>
+       word.job_title
+    // ||word.Required_Skills.toLowerCase()
+    // word.company_name
+    .toLowerCase().indexOf(search) > -1);
+                  // console.log("result",searchResult);
+      setData(searchResult)
+      
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -79,13 +111,15 @@ export default function SearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="search by role"
               inputProps={{ 'aria-label': 'search' }}
+              onChange={handleChange}
             />
           </Search>
-          <Button variant='contained'>Search</Button>
+          <Button variant='contained' onClick={()=>handleClick(search)}>Search</Button>
         </Toolbar>
       </AppBar>
+      {show?<Searched data={data}/>:""}
     </Box>
   );
 }
